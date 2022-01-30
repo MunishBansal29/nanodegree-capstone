@@ -1,4 +1,4 @@
-[![ashish223281](https://circleci.com/gh/ashish223281/NanoDegreefinal.svg?style=svg)](https://circleci.com/gh/ashish223281/NanoDegreefinal)
+[![CircleCI](https://circleci.com/gh/MunishBansal29/nanodegree-capstone/tree/master.svg?style=svg)](https://circleci.com/gh/MunishBansal29/nanodegree-capstone/tree/master)
 
 To develop a capstone project which shows the below capabilities demonstratin the deployment strategy using Rolling deployment
 
