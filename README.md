@@ -14,4 +14,4 @@ To develop a capstone project which shows the below capabilities demonstratin th
 
 6)Update the application and deploy the application to the EKS using aws-eks/update-container-image.
 
-GIT URL:- https://github.com/ashish223281/NanoDegreefinal
+GIT URL:- https://github.com/MunishBansal29/nanodegree-capstone
