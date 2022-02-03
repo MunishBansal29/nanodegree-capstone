@@ -45,7 +45,7 @@
               docker image ls
               # Tag and push image to a docker repository
               docker tag capstone11 munishbansal/capstone:capstone11
-              docker push munishbansal/capstone:capstone11
+              sudo docker push munishbansal/capstone:capstone11
 
 
 # Test the Cluster
