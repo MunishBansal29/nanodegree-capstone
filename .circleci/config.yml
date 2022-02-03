@@ -132,7 +132,7 @@
         - lint-app
         - build-push-docker-image:
            requires:
-           - lint-app
+            - lint-app
         - create-cluster:
            cluster-name: capstonecluster
            requires:
