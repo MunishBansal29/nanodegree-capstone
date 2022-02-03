@@ -130,31 +130,31 @@
     deployment:
       jobs:
         - lint-app
-  #      - build-push-docker-image:
-   #         requires:
-    #        - lint-app
-   #     - create-cluster:
-    #        cluster-name: capstonecluster
-     #       requires:
-      #        - build-push-docker-image
-    #    - create-deployment:
-     #       cluster-name: capstonecluster
-      #      requires:
-       #       - lint-app
-      #  - aws-eks/update-container-image:
-       #     cluster-name: capstonecluster
-        #    container-image-updates: mycapstone1=munishbansal/capstone
-         #   post-steps:
-          #      - kubernetes/delete-resource:
-           #         resource-names: mycapstone1
-            #        resource-types: deployment
-             #       wait: true            
-            #record: true
-            #resource-name: deployment/mycapstone1
-            #requires:
-             # - create-deployment 
-        #- test-cluster:
-         #   cluster-name: capstonecluster3
-          #  requires: 
-           #   - aws-eks/update-container-image                                      
+       - build-push-docker-image:
+           requires:
+           - lint-app
+       - create-cluster:
+           cluster-name: capstonecluster
+           requires:
+             - build-push-docker-image
+       - create-deployment:
+           cluster-name: capstonecluster
+           requires:
+             - lint-app
+       - aws-eks/update-container-image:
+           cluster-name: capstonecluster
+           container-image-updates: mycapstone1=munishbansal/capstone
+           post-steps:
+               - kubernetes/delete-resource:
+                   resource-names: mycapstone1
+                   resource-types: deployment
+                   wait: true            
+            record: true
+            resource-name: deployment/mycapstone1
+            requires:
+             - create-deployment 
+        - test-cluster:
+           cluster-name: capstonecluster
+           requires: 
+             - aws-eks/update-container-image                                      
         
