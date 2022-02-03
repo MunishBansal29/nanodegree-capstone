@@ -141,6 +141,7 @@
            cluster-name: capstonecluster
            requires:
              - lint-app
+             - create-cluster
         - aws-eks/update-container-image:
            cluster-name: capstonecluster
            container-image-updates: mycapstone1=munishbansal/capstone
