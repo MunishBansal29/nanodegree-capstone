@@ -146,7 +146,7 @@
              - create-cluster
         - aws-eks/update-container-image:
            cluster-name: capstonecluster
-           container-image-updates: mycapstone1=munishbansal/capstone
+           container-image-updates: mycapstone1=munishbansal29/capstone
            post-steps:
                - kubernetes/delete-resource:
                    resource-names: mycapstone1
