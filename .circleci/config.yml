@@ -106,6 +106,8 @@
             cluster-name: capstonecluster
             node-type: t3.medium
             show-eksctl-command: true
+            ssh-access: false
+            ssh-public-key: 'udacity'
 
     create-deployment:
       executor: aws-eks/python3
