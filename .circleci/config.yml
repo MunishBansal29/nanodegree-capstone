@@ -141,18 +141,25 @@
            cluster-name: capstonecluster
            requires:
              - lint-app
+        # - aws-eks/update-container-image:
+        #   cluster-name: capstonecluster
+        #    container-image-updates: mycapstone1=munishbansal/capstone
+        #    post-steps:
+        #        - kubernetes/delete-resource:
+        #            resource-names: mycapstone1
+        #            resource-types: deployment
+        #            wait: true            
+        #     record: true
+        #     resource-name: deployment/mycapstone1
+        #     requires:
+        #      - create-deployment 
         - aws-eks/update-container-image:
-           cluster-name: capstonecluster
-           container-image-updates: mycapstone1=munishbansal/capstone
-           post-steps:
-               - kubernetes/delete-resource:
-                   resource-names: mycapstone1
-                   resource-types: deployment
-                   wait: true            
-            record: true
-            resource-name: deployment/mycapstone1
-            requires:
-             - create-deployment 
+          cluster-name: capstonecluster
+          container-image-updates: 'mycapstone1=munishbansal/capstone:latest'
+          record: true
+          requires:
+            - create-deployment
+          resource-name: deployment/mycapstone1
         - test-cluster:
            cluster-name: capstonecluster
            requires:
