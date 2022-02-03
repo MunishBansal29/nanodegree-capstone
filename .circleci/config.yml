@@ -130,18 +130,18 @@
     deployment:
       jobs:
         - lint-app
-       - build-push-docker-image:
+        - build-push-docker-image:
            requires:
            - lint-app
-       - create-cluster:
+        - create-cluster:
            cluster-name: capstonecluster
            requires:
              - build-push-docker-image
-       - create-deployment:
+        - create-deployment:
            cluster-name: capstonecluster
            requires:
              - lint-app
-       - aws-eks/update-container-image:
+        - aws-eks/update-container-image:
            cluster-name: capstonecluster
            container-image-updates: mycapstone1=munishbansal/capstone
            post-steps:
@@ -155,6 +155,6 @@
              - create-deployment 
         - test-cluster:
            cluster-name: capstonecluster
-           requires: 
+           requires:
              - aws-eks/update-container-image                                      
         
