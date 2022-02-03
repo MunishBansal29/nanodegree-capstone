@@ -40,12 +40,12 @@
               #Login to docker hub
               docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
               # Build image and add a descriptive tag
-              docker build --tag=capstonedocker3 .
+              docker build --tag=capstonedocker .
               # List docker images
               docker image ls
               # Tag and push image to a docker repository
-              docker tag capstonedocker3 ashish223281/capstonedocker3
-              docker push ashish223281/capstonedocker3
+              docker tag capstonedocker munishbansal/capstone
+              docker push munishbansal/capstone
 
 
 # Test the Cluster
@@ -79,7 +79,7 @@
           description: |
             Name of the EKS cluster
           type: string
-          default: capstonecluster3
+          default: capstonecluster
 
       steps:
         - checkout
@@ -103,7 +103,7 @@
               $SUDO mv eksctl_download/eksctl /usr/local/bin/
               rmdir eksctl_download
         - aws-eks/create-cluster:
-            cluster-name: capstonecluster3
+            cluster-name: capstonecluster
             node-type: t3.medium
             show-eksctl-command: true
 
@@ -134,16 +134,16 @@
    #         requires:
     #        - lint-app
    #     - create-cluster:
-    #        cluster-name: capstonecluster3
+    #        cluster-name: capstonecluster
      #       requires:
       #        - build-push-docker-image
     #    - create-deployment:
-     #       cluster-name: capstonecluster3
+     #       cluster-name: capstonecluster
       #      requires:
        #       - lint-app
       #  - aws-eks/update-container-image:
-       #     cluster-name: capstonecluster3
-        #    container-image-updates: mycapstone1=ashish223281/capstonedocker3
+       #     cluster-name: capstonecluster
+        #    container-image-updates: mycapstone1=munishbansal/capstone
          #   post-steps:
           #      - kubernetes/delete-resource:
            #         resource-names: mycapstone1
