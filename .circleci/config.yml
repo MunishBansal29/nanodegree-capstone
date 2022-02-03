@@ -38,7 +38,7 @@
             name: build and push docker image
             command: |
               #Login to docker hub
-              docker login -u munishbansal29 -p Hello@2121 docker.io
+              docker login -u munishbansal29 -p Hello@2121
               # Build image and add a descriptive tag
               docker build --tag=capstone .
               # List docker images
