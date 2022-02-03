@@ -40,11 +40,11 @@
               #Login to docker hub
               docker login -u munishbansal29 -p Hello@2929 docker.io
               # Build image and add a descriptive tag
-              docker build --tag=capstonedocker .
+              docker build --tag=capstone .
               # List docker images
               docker image ls
               # Tag and push image to a docker repository
-              docker tag capstonedocker munishbansal/capstone
+              docker tag capstone munishbansal/capstone
               docker push munishbansal/capstone
 
 
