@@ -121,7 +121,7 @@
             cluster-name: << parameters.cluster-name >>
             install-kubectl: true
         - kubernetes/create-or-update-resource:
-            get-rollout-status: true
+            get-rollout-status: false
             resource-file-path: deployments/nginx-deployment.yaml
             resource-name: deployments/mycapstone1
         - kubernetes/create-or-update-resource:
